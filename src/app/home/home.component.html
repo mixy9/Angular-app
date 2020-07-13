@@ -1,0 +1,28 @@
+<div class="cont">
+
+    <div class="sign-in text" [@openClose]="isOpen ? 'openSignIn' : 'closedSignIn'">
+        <div class="text-header">
+            <h3>One of us?</h3>
+            <p>If you already has an account, just sign in.</p>
+        </div>
+    </div>
+
+    <div class="sign-up text" [@openClose]="!isOpen ? 'openSignUp' : 'closedSignUp'">
+        <div class="text-header">
+            <h3>New here?</h3>
+            <p>Sign up and discover great amount of new opportunities!</p>
+        </div>
+    </div>
+
+    <div class="play-container" [@openClose]="isOpen ? 'open' : 'closed'">
+        <app-sign-up-dialog *ngIf="!isOpen"></app-sign-up-dialog>
+        <app-sign-in *ngIf="isOpen"></app-sign-in>
+
+        <p class="mat-h3" [hidden]="isOpen">You already have an account?</p>
+        <p class="mat-h3" [hidden]="!isOpen">If you don't have an user account yet, please create an accout to register online.</p>
+
+        <button mat-raised-button color="primary" (click)="toggle()" *ngIf="isOpen">Register</button>
+        <button mat-raised-button color="primary" (click)="toggle()" *ngIf="!isOpen">Log In</button>
+    </div>
+
+</div>

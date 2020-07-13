@@ -1,0 +1,14 @@
+<div> 
+    <div class="card"> 
+        <div class="container">
+          <h4><b>{{employee.firstname}} {{employee.lastname}}</b></h4> 
+          <p>Age: {{employee.age}} Years</p> 
+          <p>{{employee.designation}}</p>
+          <hr>
+          <p> 
+              <button mat-raised-button color="primary" (click)="editEmployee()">Edit</button>  
+              <button mat-raised-button color="primary" (click)="deleteEmployee()">Delete</button>  
+          </p>
+        </div>
+    </div>  
+</div> 

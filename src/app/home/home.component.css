@@ -1,0 +1,39 @@
+.cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90vh;
+  margin-left: -10%;
+  background: url("/assets/nature.png") no-repeat center center fixed;
+  background-size: cover;
+  border-radius: 15px;
+  position: relative;
+  height: 80vh;
+}
+
+.play-container {
+  margin: 0;
+  text-align: center;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 34vh;
+}
+
+.text {
+  position: absolute;
+  width: 44vh;
+  top: 0;
+}
+
+.text .sign-up {
+  right: 0;
+}
+
+.text .sign-up {
+  left: 0;
+}
+/*# sourceMappingURL=home.component.css.map */

@@ -1,0 +1,37 @@
+<div class="play-container"> 
+
+  <div class="mat-display-1 title">Weather Forecast</div> 
+  
+  <div class="play-container">
+    <div>
+      <div>  
+        <mat-form-field [formGroup]="weatherSearchForm">  
+            <input matInput 
+            type="text"
+            id="weatherLocation"
+            aria-describedby="weatherLocation"
+            placeholder="Input a Location"
+            formControlName="location"> 
+        </mat-form-field>  
+        <button mat-raised-button color="accent" (click)="sendToAPIXU(weatherSearchForm.value)">Search</button>
+      </div>
+
+      <div class="show-weather" [hidden]="!this.weatherData?.request.query">
+        <h1 class="mat-display-1">{{ this.weatherData?.request.query}}</h1>
+        <p class="mat-h">
+          {{ this.weatherData?.location.localtime}}.
+        </p>
+
+        <img src="{{ this.weatherData?.current.weather_icons}}" alt="">
+        <p class="mat-h1">{{ this.weatherData?.current.weather_descriptions}}</p>
+        <p>
+          Temperature: {{ this.weatherData?.current.temperature}} °C
+        </p> 
+        <p class="mat-h4">
+          Feels like: {{ this.weatherData?.current.feelslike}} °C
+        </p>  
+      </div>
+
+    </div>
+  </div>
+</div>

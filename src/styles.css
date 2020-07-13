@@ -1,0 +1,194 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("assets/fonts/Montserrat/Montserrat-Regular.otf");
+}
+
+:root {
+  --primary-color: #677c91;
+  --background-color: #f9f9f9;
+  --text-color: #3e3e3e;
+  --danger-color: #C3362B;
+  --Montserrat: 'Montserrat', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: auto;
+  font-family: var(--Montserrat);
+  font-size: 18px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.background {
+  overflow: hidden;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-linear-gradient(left, #5f7898, #5f8298);
+}
+
+.logo {
+  display: none;
+  font-size: 1.3em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.3em !important;
+  margin: auto;
+  color: var(--background-color);
+}
+
+.cnt {
+  display: block !important;
+  font-size: 2em !important;
+  margin: 5% auto;
+  text-align: center;
+}
+
+.illustration img {
+  width: 90%;
+  margin: 5%;
+  margin-top: 30%;
+}
+
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+  background-color: #517093;
+  width: 130px;
+  margin: 5px;
+}
+
+.mat-fab.mat-primary:hover,
+.mat-flat-button.mat-primary:hover,
+.mat-mini-fab.mat-primary:hover,
+.mat-raised-button.mat-primary:hover {
+  background-color: #3f5772;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background: var(--primary-color);
+  padding: 1.8em 0;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav ul li a {
+  padding: 1em;
+}
+
+header nav ul li a:hover {
+  color: var(--primary-color), 40%;
+}
+
+h1 {
+  margin: 1em;
+}
+
+.text-header {
+  text-align: center;
+  color: white;
+  font-family: var(--Montserrat);
+}
+
+.text-header h3 {
+  font-size: 1.6em;
+  margin-top: 13%;
+}
+
+.text-header p {
+  font-size: 0.9em;
+}
+
+.play-container {
+  padding: 3em;
+  margin: 1em;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.active {
+  border: 4px solid var(--danger-color);
+}
+
+.mat-form-field {
+  font-size: 16px;
+}
+
+.mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+  background-color: #677c91;
+}
+
+.alert {
+  padding: 15px;
+  color: white;
+  width: 90%;
+  margin: 0;
+  border-radius: 4px;
+  margin-bottom: 3%;
+  font-size: 0.9em;
+}
+
+.alert-danger {
+  background-color: #FCCDCA;
+  color: var(--danger-color);
+}
+
+.alert-success {
+  background-color: #B0DF6F;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  line-height: 25px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 1.5em;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 700px) {
+  .alert {
+    width: auto;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

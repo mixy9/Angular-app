@@ -1,0 +1,42 @@
+<div>
+    <div class="mat-display-1">Sign in</div>
+    <p class="icons">
+        <i class="fa fa-facebook-f fa-1x"></i>
+        <i class="fa fa-github fa-1x"></i>
+        <i class="fa fa-linkedin fa-1x"></i>
+        <i class="fa fa-google-plus fa-1x"></i>
+    </p>
+    <div class="mat-h4">or use your user account</div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="bigger-form">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" [errorStateMatcher]="matcher">
+            <mat-icon matSuffix>perm_identity</mat-icon>
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is <strong>required</strong></div>
+            </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="bigger-form">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is <strong>required</strong></div>
+            </div>
+        </mat-form-field>
+
+        <alert></alert>
+
+        <p>
+            <button mat-raised-button (click)="onSubmit()" color="primary">Sign in</button>
+        </p>
+    </form>
+    <p class="mat-h4 pass" routerLink="/">Forgot your password?</p>
+
+    <hr class="border">
+</div>

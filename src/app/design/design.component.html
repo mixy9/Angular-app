@@ -1,0 +1,191 @@
+
+<div class="play-container"> 
+
+  <div class="mat-display-1 title">Welcome to App</div>
+  
+  <div>
+      <h4 class="mat-h4">Users from secure api end point:</h4 >
+      <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+      <ul *ngIf="users">
+          <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}} - <a (click)="deleteUser(user.id)" class="delete-user">Delete</a></li> 
+      </ul> 
+  </div> 
+
+  <h4 class="mat-h1">Employee List</h4>
+  <button mat-raised-button color="accent" (click)="openDialog()">Add employee</button>
+ 
+  <div class="container-small">
+    <div *ngFor='let employee of filteredList'> 
+      <app-employeedetail [employee]='employee' (refreshEmployeeList)="refreshList()">
+      </app-employeedetail>
+    </div> 
+  </div> 
+
+  <hr>
+
+  <div class="container-small"> 
+    <button mat-fab color="warn" (click)="countClick()">Click me</button>
+    <p>You've clicked this button {{ clickCounter }} times.</p> 
+  </div>
+
+</div>  
+
+<div class="play-container" [class.active]="clickCounter > 5">
+  
+  <ng-template [ngIf]="clickCounter > 5" [ngIfElse]="none">
+    <p>
+      <button mat-raised-button color="primary" (click)="openSnackBar('Search for items in table below', 'Close')">Info</button>
+    </p>
+
+    <mat-form-field>
+      <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter" [(ngModel)]="search">
+    </mat-form-field>
+    Your search: {{search}}
+    <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </ng-template>
+
+  <ng-template #none>
+    <h3>Click button more than 5 times to show table!</h3>
+  </ng-template>
+</div>
+
+
+<!-- SELECT
+  <mat-form-field>
+  <mat-label>City</mat-label>
+  <mat-select [(value)]="selectedValue">
+    <mat-optgroup label="Europe">
+      <mat-option value="Zagreb">Zagreb</mat-option>
+      <mat-option value="London">London</mat-option>
+      <mat-option value="Hamburg">Hamburg</mat-option>
+    </mat-optgroup>
+    <mat-optgroup label="USA">
+      <mat-option value="Montgomery">Montgomery</mat-option>
+      <mat-option value="Tallahassee">Tallahassee</mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
+<p>Selected Country/City: </p>{{selectedValue}}
+</div> -->  
+<div class="play-container"> 
+
+  <div class="mat-display-1 title">Welcome to App</div>
+  
+  <div>
+      <h4 class="mat-h4">Users from secure api end point:</h4 >
+      <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+      <ul *ngIf="users">
+          <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}} - <a (click)="deleteUser(user.id)" class="delete-user">Delete</a></li> 
+      </ul> 
+  </div> 
+
+  <h4 class="mat-h1">Employee List</h4>
+  <button mat-raised-button color="accent" (click)="openDialog()">Add employee</button>
+ 
+  <div class="container-small">
+    <div *ngFor='let employee of filteredList'> 
+      <app-employeedetail [employee]='employee' (refreshEmployeeList)="refreshList()">
+      </app-employeedetail>
+    </div> 
+  </div> 
+
+  <hr>
+
+  <div class="container-small"> 
+    <button mat-fab color="warn" (click)="countClick()">Click me</button>
+    <p>You've clicked this button {{ clickCounter }} times.</p> 
+  </div>
+
+</div>  
+
+<div class="play-container" [class.active]="clickCounter > 5">
+  
+  <ng-template [ngIf]="clickCounter > 5" [ngIfElse]="none">
+    <p>
+      <button mat-raised-button color="primary" (click)="openSnackBar('Search for items in table below', 'Close')">Info</button>
+    </p>
+
+    <mat-form-field>
+      <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter" [(ngModel)]="search">
+    </mat-form-field>
+    Your search: {{search}}
+    <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </ng-template>
+
+  <ng-template #none>
+    <h3>Click button more than 5 times to show table!</h3>
+  </ng-template>
+</div>
+
+
+<!-- SELECT
+  <mat-form-field>
+  <mat-label>City</mat-label>
+  <mat-select [(value)]="selectedValue">
+    <mat-optgroup label="Europe">
+      <mat-option value="Zagreb">Zagreb</mat-option>
+      <mat-option value="London">London</mat-option>
+      <mat-option value="Hamburg">Hamburg</mat-option>
+    </mat-optgroup>
+    <mat-optgroup label="USA">
+      <mat-option value="Montgomery">Montgomery</mat-option>
+      <mat-option value="Tallahassee">Tallahassee</mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
+<p>Selected Country/City: </p>{{selectedValue}}
+</div> -->  
