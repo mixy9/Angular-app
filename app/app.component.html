@@ -1,0 +1,42 @@
+<header *ngIf="currentUser">
+  <div class="container">
+
+    <div class="logo" [style.display]="currentUser ? 'contents' : 'none'">
+      <a routerLink="/">multiApp</a>
+    </div>
+
+    <nav>
+      <ul>
+        <p class="account-name">Hello, {{currentUser.firstName}}</p>
+        <div mat-card-avatar class="example-header-image"></div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>voicemail</mat-icon>
+            <span routerLink="/design">Data</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>cloud</mat-icon>
+            <span routerLink="/forecast">Weather today</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+          </button>
+          <button mat-menu-item (click)="openDialog()">
+            <mat-icon>power_settings_new</mat-icon>
+            <span>Log out</span>
+          </button>
+        </mat-menu>
+
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

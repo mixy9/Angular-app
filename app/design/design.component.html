@@ -1,0 +1,26 @@
+<div class="play-container">
+  <div class="mat-display-1 title">EMPLOYEE LIST</div>
+  <p>
+    <button mat-raised-button color="primary" (click)="openSnackBar('Add new employees', 'Close')">Info</button>
+  </p>
+  <div>
+    <h4 class="mat-h4">Users from secure api end point:</h4>
+    <div class="spinner-border spinner-border-sm"></div>
+    <ul *ngIf="userr">
+      <li *ngFor="let user of userr">{{user.firstName}} {{user.lastName}} - <a (click)="deleteUser(user.id)"
+          class="delete-user">Delete</a></li>
+    </ul>
+    <button mat-raised-button (click)="openDialog()">Add employee</button>
+  </div>
+
+  <div class="container-small">
+    <button mat-raised-button (click)="showTable()">Click to show employees</button>
+  </div>
+
+  <div class="container-small" [hidden]="this.table">
+    <div *ngFor='let employee of filteredList'>
+      <app-employeedetail [employee]='employee' (refreshEmployeeList)="refreshList()">
+      </app-employeedetail>
+    </div>
+  </div>
+</div>

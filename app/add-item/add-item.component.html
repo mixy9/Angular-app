@@ -1,0 +1,69 @@
+<div class="dialog">
+
+    <h2 mat-dialog-title>Add an employee</h2>
+
+    <mat-dialog-content>
+        <mat-vertical-stepper [linear]="true" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Fill out your name</ng-template>
+                    <mat-form-field>
+                        <input matInput placeholder="First name" formControlName="firstname" [(ngModel)]="firstname" required>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Last name" formControlName="lastname" [(ngModel)]="lastname" required>
+                    </mat-form-field> 
+
+                    <div class="stepperBtn">
+                        <button mat-raised-button color="primary" matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Fill out your age</ng-template>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Age" formControlName="age" [(ngModel)]="age" required>
+                    </mat-form-field> 
+
+                    <div class="stepperBtn">
+                        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                        <button mat-raised-button color="primary" matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Position</ng-template>
+                
+                <mat-form-field>
+                    <input matInput placeholder="Designation" formControlName="designation" [(ngModel)]="designation" required> 
+                </mat-form-field>  
+
+                <div class="stepperBtn">
+                    <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                    <button mat-raised-button color="primary" matStepperNext>Next</button> 
+                </div>
+            </form>
+            </mat-step>
+            <mat-step>
+                <form>
+                <ng-template matStepLabel>Done!</ng-template>
+                
+                You are finished!
+  
+                <div class="stepperBtn">
+                    <button mat-raised-button color="primary" matStepperPrevious>Back</button> 
+                    <button mat-raised-button color="primary" (click)="saveEmployee()">Save</button> 
+                </div>
+            </form>
+            </mat-step>
+        </mat-vertical-stepper>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close color="accent" mat-dialog-close="false">Cancel</button>
+    </mat-dialog-actions>
+</div> 

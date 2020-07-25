@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap");
+li {
+  margin-top: 8px;
+}
+
+.mat-card-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.account-name {
+  margin: 10px;
+  color: white;
+  font-size: 0.9em;
+}
+/*# sourceMappingURL=app.component.css.map */

@@ -1,0 +1,23 @@
+.dialog {
+  width: 90vh;
+  height: auto;
+}
+
+mat-form-field {
+  width: 40%;
+  display: block;
+}
+
+.stepperBtn {
+  width: 40%;
+  padding-top: 17px;
+}
+
+.stepperBtn button {
+  margin-top: 2%;
+}
+
+mat-dialog-actions {
+  float: right;
+}
+/*# sourceMappingURL=add-item.component.css.map */
