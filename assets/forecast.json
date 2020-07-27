@@ -1,0 +1,7 @@
+[
+    {"id":1,"city":"Zagreb","day":"Monday", "min_temp":"1", "max_temp":"3"},
+    {"id":1,"city":"London","min_temp":"5", "max_temp":"3"},
+    {"id":1,"city":"Vukovar","min_temp":"6", "max_temp":"0"},
+    {"id":1,"city":"New York","min_temp":"3", "max_temp":"3"},
+    {"id":1,"city":"Osijek","min_temp":"7", "max_temp":"0"}
+]
